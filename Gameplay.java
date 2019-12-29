@@ -125,6 +125,11 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
                 i++;
             }
         }
+
+        if(x_c < 0 || x_c > 59 || y_c < 0 || y_c > 59){
+            System.out.println("GG");
+            stop();
+        }
     }
 
 	@Override
