@@ -20,7 +20,7 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
     private int width = 600; 
     private int x_c = 10;
     private int y_c = 10;
-    private int size = 5;
+    private int size = 10;
     private int ticks = 0;
 
     private Thread thread;
