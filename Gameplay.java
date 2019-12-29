@@ -126,10 +126,21 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
             }
         }
 
+        //wall collision
         if(x_c < 0 || x_c > 59 || y_c < 0 || y_c > 59){
             System.out.println("GG");
             stop();
         }
+
+         //collosion on snake border body part 
+        for(int i = 0 ; i < snake.size(); i++) {
+            if(x_c == snake.get(i).getX_c() && y_c == snake.get(i).getY_c()) {
+                if(i !=snake.size()- 1) {
+                    System.out.println("GG");
+                    stop();
+                }   
+            }
+        } 
     }
 
 	@Override
