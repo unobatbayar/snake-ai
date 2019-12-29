@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Random;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener; 
 
@@ -32,15 +33,21 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
 
 
     private BodyBlock b;
-
     private ArrayList<BodyBlock> snake; 
 
+    private Dot d;
+    private ArrayList<Dot> dots; 
+
+    private Random r;
 
     public Gameplay(){
         setFocusable(true);
         setPreferredSize(new Dimension(width, height));
         addKeyListener(this);
         snake = new ArrayList<BodyBlock>(); 
+        dots = new ArrayList<Dot>();
+
+        r = new Random();
         start();
     }
 
@@ -74,7 +81,10 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
         for(int i = 0; i <snake.size(); i++){
             snake.get(i).draw(g);
         }
-        //g.fillRect(0, 0, width, height);
+
+        for(int i = 0; i<dots.size(); i++){
+            dots.get(i).draw(g);
+        }
     }
 
     public void tick(){
@@ -97,6 +107,22 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
 
             if(snake.size() > size){
                 snake.remove(0);
+            }
+        }
+
+        if(dots.size() == 0 ){
+            int x_c = r.nextInt(59);
+            int y_c = r.nextInt(59);
+
+            d = new Dot(x_c, y_c, 10);
+            dots.add(d);
+        }
+
+        for(int i = 0; i<dots.size(); i++){
+            if(x_c == dots.get(i).getX_c() && y_c == dots.get(i).getY_c()){
+                size++;
+                dots.remove(i);
+                i++;
             }
         }
     }
@@ -133,7 +159,8 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
-        //pointers
+
+        //For general users
         if(key == KeyEvent.VK_RIGHT && !left){
             right = true;
             up = false;
@@ -154,7 +181,8 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
             left = false;
             right = false;
         }
-                //pointers
+        
+        //For gamers
         if(key == KeyEvent.VK_D && !left){
             right = true;
             up = false;
