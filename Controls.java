@@ -14,18 +14,18 @@ public class Controls extends JPanel implements Runnable{
     }
 
     public void start(){
-
     }
 
     public void stop(){
         
     }
 
-    public void draw(Graphics graphics){
+    public void paint(Graphics graphics){
+        System.out.println("painting...");
 
-        graphics.clearRect(0, 0, width, height);
-        graphics.setColor(Color.BLACK); 
-        graphics.fillRect(0, 0, width, height);
+        //graphics.clearRect(0, 0, width, height);
+        //graphics.setColor(Color.BLACK); 
+       // graphics.fillRect(0, 0, width, height);
 
         for(int i = 0; i<width/10; i++){
             graphics.drawLine(i*10, 0, i*10, height);
@@ -39,7 +39,8 @@ public class Controls extends JPanel implements Runnable{
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+        // TODO Auto-generated method stub
+
     }
 
     public int getHeight(){
