@@ -17,7 +17,7 @@ public class Main{
         frame.add(controls);
       
         frame.pack();
-        frame.setVisible(true);
+        frame.setVisible(true); // will call paint()
         frame.setLocationRelativeTo(null);
     }
 }

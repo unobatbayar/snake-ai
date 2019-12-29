@@ -6,31 +6,46 @@ import javax.swing.JPanel;
 public class Controls extends JPanel implements Runnable{
 
 	private static final long serialVersionUID = 1L;
-	private int height = 475;
-    private int width = 475; 
+	private int height = 600;
+    private int width = 600; 
+    private Thread thread;
+    private boolean running;
 
     public Controls(){
         setPreferredSize(new Dimension(width, height));
+        start();
     }
 
     public void start(){
+        running = true;
+        System.out.println("Started running...");
+        thread = new Thread(this);
+        thread.start();
+        System.out.println("Starting thread...");
     }
 
     public void stop(){
-        
+        running = false;
+        try{
+            thread.join();
+        }catch(Exception e){
+            System.out.println("Error: " + e);
+        }
     }
 
-    public void paint(Graphics graphics){
+    /*
+    The paint method is automatically called after the constructor. Also called when we setVisible(true);
+    https://stackoverflow.com/questions/30786744/is-the-paint-method-called-when-a-jframe-is-created/30786885
+    */
+    public void paint(Graphics g){
         System.out.println("painting...");
 
-        //graphics.clearRect(0, 0, width, height);
-        //graphics.setColor(Color.BLACK); 
-       // graphics.fillRect(0, 0, width, height);
-
-        for(int i = 0; i<width/10; i++){
-            graphics.drawLine(i*10, 0, i*10, height);
-            graphics.drawLine(0, i*10, height, i*10);
+        for(int i = 0; i<width/6; i++){
+            g.drawLine(i*10, 0, i*10, height);
+            g.drawLine(0, i*10, height, i*10);
         }
+
+        g.fillRect(0, 0, width, height);
     }
 
     public void tick(){
