@@ -2,6 +2,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener; 
 
 import javax.swing.JPanel;
 /* @author unobatbayar
@@ -9,7 +11,7 @@ import javax.swing.JPanel;
     Paints the canvas, and runs/stops the game. 
     Calls methods from other classes.
 */
-public class Gameplay extends JPanel implements Runnable{
+public class Gameplay extends JPanel implements Runnable, KeyListener{
 
     private static final long serialVersionUID = 1L;
     
@@ -35,7 +37,9 @@ public class Gameplay extends JPanel implements Runnable{
 
 
     public Gameplay(){
+        setFocusable(true);
         setPreferredSize(new Dimension(width, height));
+        addKeyListener(this);
         snake = new ArrayList<BodyBlock>(); 
         start();
     }
@@ -80,11 +84,11 @@ public class Gameplay extends JPanel implements Runnable{
         }
 
         ticks++;
-        if(ticks > 500000 ticks){
+        if(ticks > 500000){
             if(right) x_c++;
             if(left) x_c--;
-            if(up) y_c++ ;
-            if(down) y_c--;
+            if(up) y_c--;
+            if(down) y_c++;
 
             ticks = 0;
 
@@ -121,4 +125,82 @@ public class Gameplay extends JPanel implements Runnable{
     public void setWidth(int width){
         this.width = width;
     }
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+        int key = e.getKeyCode();
+        //pointers
+        if(key == KeyEvent.VK_RIGHT && !left){
+            right = true;
+            up = false;
+            down = false;
+        }
+        if(key == KeyEvent.VK_LEFT && !right){
+            left = true;
+            up = false;
+            down = false;
+        }
+        if(key == KeyEvent.VK_UP && !down){
+            up = true;
+            left = false;
+            right = false;
+        }
+        if(key == KeyEvent.VK_DOWN && !up){
+            down = true;
+            left = false;
+            right = false;
+        }
+                //pointers
+        if(key == KeyEvent.VK_D && !left){
+            right = true;
+            up = false;
+            down = false;
+        }
+        if(key == KeyEvent.VK_A && !right){
+            left = true;
+            up = false;
+            down = false;
+        }
+        if(key == KeyEvent.VK_W && !down){
+            up = true;
+            left = false;
+            right = false;
+        }
+        if(key == KeyEvent.VK_S && !up){
+            down = true;
+            left = false;
+            right = false;
+        }        //pointers
+        if(key == KeyEvent.VK_RIGHT && !left){
+            right = true;
+            up = false;
+            down = false;
+        }
+        if(key == KeyEvent.VK_LEFT && !right){
+            left = true;
+            up = false;
+            down = false;
+        }
+        if(key == KeyEvent.VK_UP && !down){
+            up = true;
+            left = false;
+            right = false;
+        }
+        if(key == KeyEvent.VK_DOWN && !up){
+            down = true;
+            left = false;
+            right = false;
+        }
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+
+	}
 }
