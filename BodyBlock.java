@@ -1,16 +1,14 @@
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
-import javax.swing.JPanel;
 
-public class Snake{
+public class BodyBlock{
 
     private int x_c;
     private int y_c;
     private int height;
     private int width;
 
-    public Snake(int x_c, int y_c, int size){
+    public BodyBlock(int x_c, int y_c, int size){
         this.x_c = x_c;
         this.y_c = y_c;
         this.height = size;
@@ -42,22 +40,5 @@ public class Snake{
 	public void setY_c(int y_c) {
 		this.y_c = y_c;
 	}
-
-	public int getHeight() {
-		return this.height;
-	}
-
-	public void setHeight(int height) {
-		this.height = height;
-	}
-
-	public int getWidth() {
-		return this.width;
-	}
-
-	public void setWidth(int width) {
-		this.width = width;
-	}
-
 
 }
