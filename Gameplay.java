@@ -2,8 +2,12 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JPanel;
-
-public class Controls extends JPanel implements Runnable{
+/* @author unobatbayar
+    Controls class for the game;
+    Paints the canvas, and runs/stops the game. 
+    Calls methods from other classes.
+*/
+public class Gameplay extends JPanel implements Runnable{
 
 	private static final long serialVersionUID = 1L;
 	private int height = 600;
@@ -11,7 +15,7 @@ public class Controls extends JPanel implements Runnable{
     private Thread thread;
     private boolean running;
 
-    public Controls(){
+    public Gameplay(){
         setPreferredSize(new Dimension(width, height));
         start();
     }
@@ -38,8 +42,6 @@ public class Controls extends JPanel implements Runnable{
     https://stackoverflow.com/questions/30786744/is-the-paint-method-called-when-a-jframe-is-created/30786885
     */
     public void paint(Graphics g){
-        System.out.println("painting...");
-
         for(int i = 0; i<width/6; i++){
             g.drawLine(i*10, 0, i*10, height);
             g.drawLine(0, i*10, height, i*10);
@@ -54,7 +56,10 @@ public class Controls extends JPanel implements Runnable{
 
 	@Override
 	public void run() {
-        // TODO Auto-generated method stub
+        while(running){
+            tick();
+            repaint();
+        }
 
     }
 

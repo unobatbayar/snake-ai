@@ -1,5 +1,4 @@
 import javax.swing.JFrame;
-
 /* @author unobatbayar
     Main class for the game
 */
@@ -12,9 +11,9 @@ public class Main{
         JFrame frame = new JFrame();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Controls controls = new Controls();
+        Gameplay gameplay= new Gameplay();
         frame.setTitle("Snake-AI");
-        frame.add(controls);
+        frame.add(gameplay);
       
         frame.pack();
         frame.setVisible(true); // will call paint()
