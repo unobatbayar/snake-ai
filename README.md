@@ -8,3 +8,4 @@ java Main
 
 ``
 
+![alt text](https://github.com/unobatbayar/HackerRank/blob/master/working.png)
