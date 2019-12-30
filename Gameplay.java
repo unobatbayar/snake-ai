@@ -227,28 +227,7 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
             down = true;
             left = false;
             right = false;
-        }        //pointers
-        if(key == KeyEvent.VK_RIGHT && !left){
-            right = true;
-            up = false;
-            down = false;
-        }
-        if(key == KeyEvent.VK_LEFT && !right){
-            left = true;
-            up = false;
-            down = false;
-        }
-        if(key == KeyEvent.VK_UP && !down){
-            up = true;
-            left = false;
-            right = false;
-        }
-        if(key == KeyEvent.VK_DOWN && !up){
-            down = true;
-            left = false;
-            right = false;
-        }
-		
+        }    
 	}
 
 	@Override
