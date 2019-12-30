@@ -1,7 +1,7 @@
 # Snake-AI
-###### Creating a simple snake game and later implemeting an AI to play it.
+Creating a simple snake game and later implemeting an AI to play it.
 
-To run:
+###### To run:
 ```
 cd Snake-AI
 
