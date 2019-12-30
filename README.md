@@ -1,9 +1,10 @@
 # Snake-AI
-Creating a simple snake game and later implemeting an AI to play it.
+## Creating a simple snake game and later implemeting an AI to play it.
 
-Simply run and choose player:
+To run:
 ```
 cd Snake-AI
+
 java Main 
 
 ```
