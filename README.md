@@ -8,4 +8,4 @@ java Main
 
 ``
 
-![alt text](https://github.com/unobatbayar/HackerRank/blob/master/working.png)
+![alt text](https://github.com/unobatbayar/Snake-AI/blob/master/Images/human%20player.png)
