@@ -8,8 +8,8 @@ cd Snake-AI
 java Main 
 
 ```
+- [x] Human player mode
+- [ ] AI player mode 
 
 ![alt text](https://github.com/unobatbayar/Snake-AI/blob/master/Images/human%20player.png)
 
-- [x] Human player mode
-- [ ] AI player mode 
