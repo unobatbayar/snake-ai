@@ -16,7 +16,7 @@ public class Main{
         frame.add(gameplay);
       
         frame.pack();
-        frame.setVisible(true); // will call paint()
         frame.setLocationRelativeTo(null);
+        frame.setVisible(true); // will call paint()
     }
 }

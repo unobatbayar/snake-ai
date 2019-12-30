@@ -22,6 +22,7 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
     private int y_c = 10;
     private int size = 10;
     private int ticks = 0;
+    private int score = 0;
 
     private Thread thread;
 
@@ -73,6 +74,9 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
     https://stackoverflow.com/questions/30786744/is-the-paint-method-called-when-a-jframe-is-created/30786885
     */
     public void paint(Graphics g){
+    
+        g.fillRect(0, 0, width, width);
+    
         for(int i = 0; i<width/6; i++){
             g.drawLine(i*10, 0, i*10, height);
             g.drawLine(0, i*10, height, i*10);
@@ -85,6 +89,10 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
         for(int i = 0; i<dots.size(); i++){
             dots.get(i).draw(g);
         }
+
+        g.drawString("Score: " + score, 20, 20);
+        g.drawString("Player: human", 20, 40);
+
     }
 
     public void tick(){
@@ -94,7 +102,7 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
         }
 
         ticks++;
-        if(ticks > 500000){
+        if(ticks > 250000){
             if(right) x_c++;
             if(left) x_c--;
             if(up) y_c--;
@@ -121,6 +129,7 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
         for(int i = 0; i<dots.size(); i++){
             if(x_c == dots.get(i).getX_c() && y_c == dots.get(i).getY_c()){
                 size++;
+                score++;
                 dots.remove(i);
                 i++;
             }
@@ -128,7 +137,7 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
 
         //wall collision
         if(x_c < 0 || x_c > 59 || y_c < 0 || y_c > 59){
-            System.out.println("GG");
+            System.out.println("Game Over. Your score: " + score);
             stop();
         }
 
@@ -136,7 +145,7 @@ public class Gameplay extends JPanel implements Runnable, KeyListener{
         for(int i = 0 ; i < snake.size(); i++) {
             if(x_c == snake.get(i).getX_c() && y_c == snake.get(i).getY_c()) {
                 if(i !=snake.size()- 1) {
-                    System.out.println("GG");
+                    System.out.println("Game Over. Your score: " + score);
                     stop();
                 }   
             }

@@ -21,7 +21,7 @@ public class BodyBlock{
     }
 
     public void draw(Graphics g){
-        g.setColor(Color.BLACK);
+        g.setColor(Color.GREEN);
         g.fillRect(x_c*width, y_c*height, width, height);
     }
 
