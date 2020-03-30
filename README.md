@@ -1,7 +1,16 @@
-# Snake-AI
-Creating a simple snake game and later implemeting an AI to play it.
+<div align="center">
+  <h1><code>snake-ai</code></h1>
 
-###### To run:
+  <strong>Simple java snake game made for people and artificial intelligence to play.</strong>
+
+<h3>
+    <a href="https://github.com/unobatbayar/snake-ai/pull/new/master">Contribute</a>
+  </h3>
+
+  <sub> Built with ❤️️ by <a href="https://www.twitter.com/unobatbayar">unobatbayar</a></sub>
+</div>
+
+## How to run
 ```
 cd Snake-AI
 
