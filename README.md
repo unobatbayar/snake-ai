@@ -15,7 +15,6 @@
 cd Snake-AI
 
 java Main 
-
 ```
 - [x] Human player mode
 - [ ] AI player mode 
