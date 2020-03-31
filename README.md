@@ -7,7 +7,7 @@
     <a href="https://github.com/unobatbayar/snake-ai/pull/new/master">Contribute</a>
   </h3>
 
-  <sub> Built by <a href="https://www.twitter.com/unobatbayar">unobatbayar</a> to learn.</sub>
+  <sub> Built by <a href="https://www.twitter.com/unobatbayar">unobatbayar</a> for learning.</sub>
 </div>
 
 ## How to run
