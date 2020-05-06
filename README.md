@@ -21,3 +21,5 @@ java Main
 
 ![alt text](https://github.com/unobatbayar/Snake-AI/blob/master/Images/human%20player.png)
 
+<sub>Give feedback, ideas and more: <br> <sub> 
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/unobatbayar.svg?style=social&label=Follow%20%40unobatbayar)](https://twitter.com/unobatbayar)
