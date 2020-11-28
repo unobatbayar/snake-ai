@@ -11,7 +11,7 @@
 </div>
 
 ## How to run
-```
+```sh
 cd Snake-AI
 
 java Main 
